@@ -5,8 +5,8 @@ class Stack
 
   def push(el)
     # @stack.push(el)
-    stack << el
-    self
+    stack << el # this will return actual array, which can be mutated by users
+    self        # so return self (or nil or whatever you want)
   end
 
   def pop
@@ -28,8 +28,8 @@ class Queue
 
   def enqueue(el)
     # queue.push(el)
-    queue << el
-    self
+    queue << el # this will return actual array, which can be mutated by users
+    self        # so return self (or nil or whatever you want)
   end
 
   def dequeue
@@ -69,7 +69,8 @@ class Map
   end
 
   def show 
-    map
+    # show/return a copy so original can't be mutated by users
+    map.dup
   end
 
   private
