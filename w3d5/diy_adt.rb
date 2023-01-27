@@ -4,16 +4,21 @@ class Stack
   end
 
   def push(el)
-    @stack.push(el)
+    # @stack.push(el)
+    stack << el
+    self
   end
 
   def pop
-    @stack.pop
+    stack.pop
   end
 
   def peek
-    @stack[-1]
+    stack[-1]
   end
+
+  private
+  attr_reader :stack
 end
 
 class Queue
@@ -22,16 +27,21 @@ class Queue
   end
 
   def enqueue(el)
-    @queue.push(el)
+    # queue.push(el)
+    queue << el
+    self
   end
 
   def dequeue
-    @queue.shift
+    queue.shift
   end
 
   def peek
-    @queue[0]
+    queue[0]
   end
+
+  private
+  attr_reader :queue
 end
 
 class Map 
@@ -40,27 +50,30 @@ class Map
   end
 
   def set(key, value)
-    idx = @map.index { |kv_pair| kv_pair[0] == key }
+    idx = map.index { |kv_pair| kv_pair[0] == key }
     if idx != nil
-      @map[idx][1] = value
+      map[idx][1] = value
     else
-      @map.push([key, value])
+      map.push([key, value])
     end
   end
 
   def get(key)
-    idx = @map.index { |kv_pair| kv_pair[0] == key }
-    idx == nil ? nil : @map[idx][1]
+    idx = map.index { |kv_pair| kv_pair[0] == key }
+    idx == nil ? nil : map[idx][1]
   end
 
   def delete(key)
-    idx = @map.index { |kv_pair| kv_pair[0] == key }
-    @map.delete_at(idx) if idx != nil
+    idx = map.index { |kv_pair| kv_pair[0] == key }
+    map.delete_at(idx) if idx != nil
   end
 
   def show 
-    @map
+    map
   end
+
+  private
+  attr_reader :map
 end
 
 puts "testing Stack"
