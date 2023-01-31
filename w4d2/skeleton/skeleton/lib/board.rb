@@ -5,14 +5,15 @@ class Board
   def initialize(name1, name2)
     @name1 = name1
     @name2 = name2
-    @cups = Array.new(12) { Array.new(4, :stone) }
-    @cups.insert(6, [])
-    # @cups.insert(13, [])
-    @cups << []
+    @cups = make_cups
   end
 
-  def place_stones
-    # helper method to #initialize every non-store cup with four stones each
+  def make_cups
+    cups = Array.new(12) { Array.new(4, :stone) }
+    cups.insert(6, [])
+    # @cups.insert(13, [])
+    cups << []
+    cups
   end
 
   def valid_move?(start_pos)
