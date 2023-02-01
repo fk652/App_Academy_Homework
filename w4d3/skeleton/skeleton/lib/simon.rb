@@ -13,6 +13,7 @@ class Simon
     :yellow, 
     :green, 
     :red,
+
     :black,
     :cyan,
     :magenta,
