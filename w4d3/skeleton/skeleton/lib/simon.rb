@@ -59,7 +59,7 @@ class Simon
       # puts color.colorize(COLOR_MAP[color])
       # puts color.colorize(COLORIZERS.sample)
       puts color.colorize(:color => COLORIZERS.sample, :background => COLORIZERS.sample)
-      sleep(1)
+      sleep(0.5)
       system("clear")
       sleep(0.5)
     end
