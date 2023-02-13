@@ -111,10 +111,19 @@ class MetaCorgiSnacks
 
   def method_missing(name, *args)
     # Your code goes here...
+    info_method_name = ('get_' + name.to_s + '_info').to_sym
+    info = @snack_box.send(info_method_name, @box_id)
+
+    tastiness_method_name = ('get_' + name.to_s + '_tastiness').to_sym
+    tastiness = @snack_box.send(tastiness_method_name, @box_id)
+
+    result = "Treat: #{info}: #{tastiness} "
+    tastiness > 30 ? "* #{result}" : result
   end
 
 
   def self.define_snack(name)
     # Your code goes here...
+    
   end
 end
