@@ -18,17 +18,17 @@ RSpec.describe "Users", type: :request do
   describe "POST /users (#create)" do
     context "with invalid params" do
       it "validates the presence of the user's email" do
-        expect(response).to include("Email cannot be blank")
+        expect(response.body).to include("Email must be present")
       end
 
       it "validates that the password is at least 6 characters long" do
-        expect(response).to include("")
+        expect(response.body).to include("")
       end
     end
 
     context "with valid params" do
       it "redirects user to root page on success" do
-        expect(response).to include("")
+        expect(response.body).to include("")
       end
     end
   end
