@@ -109,8 +109,48 @@ label {
     display: block;
 }
 
+.hamburger-dropdown {
+  display: none;
+}
+
 /* Media Queries! */
 @media all and (max-width: 900px) {
 /* Code Goes Here */
+  .ingredients-list li {
+    width: 12.5%;
+  }
+
+  nav > ul {
+    display: none;
+  }
+
+  .hamburger-dropdown {
+    display: block;
+  }
+
+  .hamburger-dropdown > li {
+    background-image: url(appacademylogo.png);
+    width: 50%;
+    background-size: 50px 50px;
+  }
+
+  .hamburger-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .hamburger-dropdown:hover ul { 
+    display: block;
+ }
 }
 
