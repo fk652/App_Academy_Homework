@@ -28,6 +28,8 @@ ApplicationRecord.transaction do
   toy1 = Toy.create!(name: "Solar Beam", toyable: cat1)
   toy2 = Toy.create!(name: "Hyper Beam", toyable: corgi2)
   toy3 = Toy.create!(name: "Seismic Toss", toyable: cat2)
+  cat2.receive_toy("Fury Swipes")
+  cat1.receive_toy("Mega Punch")
 
   puts "Done!"
 end
