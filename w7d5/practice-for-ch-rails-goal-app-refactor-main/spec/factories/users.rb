@@ -8,7 +8,7 @@
 #  password_digest :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  cheer_count     :integer          not null
+#  cheer_count     :integer          default(12), not null
 #
 FactoryBot.define do
   factory :user do

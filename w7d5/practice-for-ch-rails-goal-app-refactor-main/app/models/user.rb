@@ -8,7 +8,7 @@
 #  password_digest :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  cheer_count     :integer          not null
+#  cheer_count     :integer          default(12), not null
 #
 class User < ApplicationRecord
   validates :session_token, presence: true
@@ -47,6 +47,9 @@ class User < ApplicationRecord
   has_many :cheers_received,
     through: :goals,
     source: :cheers
+
+  has_many :comments, as: :commentable
+  has_many :commenters, as: :commenterable
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

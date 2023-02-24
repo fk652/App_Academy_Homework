@@ -18,6 +18,8 @@ class Goal < ApplicationRecord
   has_many :comments, class_name: :GoalComment, dependent: :destroy
   has_many :cheers, dependent: :destroy
 
+  has_many :comments, as: :commentable
+
   def cheered_by?(user)
     cheers.exists?(giver_id: user.id)
   end
